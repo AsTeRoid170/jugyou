@@ -2,15 +2,11 @@ using UnityEngine;
 
 public class goal : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void OnCollisionEnter2D(Collision2D collision)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (collision.gameObject.tag == "Player")
+        {
+            Debug.Log("ひよこちゃんを助けたよ！ゲームクリアー！");
+        }
     }
 }

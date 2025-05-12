@@ -1,16 +1,21 @@
 using UnityEngine;
 
-public class floatFloor : MonoBehaviour
+public class FloatFloor : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    //•Ï”’è‹`
+    private Rigidbody2D rb;
+    private Vector2 defaultpass;
+
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
+        defaultpass = transform.position;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        //XÀ•W‚Ì‚İ‰¡ˆÚ“®
+        rb.MovePosition(new Vector2(defaultpass.x + Mathf.PingPong(Time.time, 3), defaultpass.y));
     }
+
 }
