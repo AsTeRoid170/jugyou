@@ -1,9 +1,11 @@
 using UnityEngine;
+using System.Collections;
 
 public class PlayerController2D : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public float jumpForce = 7f;
+    public GameObject swordHitbox;
     private Rigidbody2D rb;
     private bool isGrounded;
     private Animator animator;
@@ -48,6 +50,12 @@ public class PlayerController2D : MonoBehaviour
     {
         Debug.Log("攻撃");
         animator.SetTrigger("attack");  // ←アニメーション再生
-
+        StartCoroutine(EnableSwordHitbox());
+    }
+    IEnumerator EnableSwordHitbox()
+    {
+        swordHitbox.SetActive(true);
+        yield return new WaitForSeconds(0.2f);
+        swordHitbox.SetActive(false);
     }
 }
