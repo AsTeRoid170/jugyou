@@ -34,7 +34,7 @@ public class PlayerController2D : MonoBehaviour
         // Space攻撃
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Attack();
+            animator.SetTrigger("attack");
         }
     }
 
