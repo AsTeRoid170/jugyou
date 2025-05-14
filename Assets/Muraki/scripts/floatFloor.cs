@@ -15,7 +15,7 @@ public class FloatFloor : MonoBehaviour
     void Update()
     {
         //Xç¿ïWÇÃÇ›â°à⁄ìÆ
-        rb.MovePosition(new Vector2(defaultpass.x + Mathf.PingPong(Time.time, 3), defaultpass.y));
+        rb.MovePosition(new Vector2(defaultpass.x + Mathf.PingPong(Time.time, 6), defaultpass.y));
     }
 
 }
