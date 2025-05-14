@@ -6,7 +6,7 @@ public class goal : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Debug.Log("ひよこちゃんを助けたよ！ゲームクリアー！");
+            Debug.Log("ゲームクリアー！");
         }
     }
 }

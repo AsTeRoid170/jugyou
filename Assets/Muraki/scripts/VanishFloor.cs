@@ -2,15 +2,13 @@ using UnityEngine;
 
 public class VanishFloor : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public GameObject testObject;
+    public void OnCollisionEnter2D(Collision2D collision)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (collision.gameObject.tag == "Player")
+        {
+            
+            testObject.SetActive(false);
+        }
     }
 }
