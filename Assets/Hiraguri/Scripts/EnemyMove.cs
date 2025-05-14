@@ -86,7 +86,7 @@ public class EnemyMove : MonoBehaviour
     {
         enemyDirectionFlg = !enemyDirectionFlg;
         Vector3 localScale = transform.localScale;
-        localScale.x *= -1;  // X���Ŕ��]
+        localScale.x *= -1;  
         transform.localScale = localScale;
         forwardDistance *= -1;
     }
