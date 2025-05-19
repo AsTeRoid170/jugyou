@@ -6,6 +6,13 @@ TagManager:
   tags:
   - enemy
   - GrandPlatform
+  - Wall
+  - Floor
+  - EnemyBallet
+  - Item
+  - PlayerBallet
+  - Switch
+  - Float Floor
   layers:
   - Default
   - TransparentFX
