@@ -11,8 +11,8 @@ public class EnemyMove : MonoBehaviour
 
     Vector2 DirectionDown = Vector2.down;                            // Rayを下向きに飛ばす
     [SerializeField] float RayDistance = 0.3f;                                        //Rayの飛距離
-    [SerializeField] float ForwardDistance = -0.5f;                  //Rayのスタート位置 x 最初は左向きだから-
-    [SerializeField] float FootDistance = -0.7f;                     //Rayのスタート位置 y サイズによって調整が必要
+    Vector2 origin;
+    Bounds bounds;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -24,22 +24,21 @@ public class EnemyMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        bounds = GetComponent<Collider2D>().bounds;
+
         if (EnemyDirectionFlg)
         {
             transform.position += Vector3.left * Time.deltaTime * MoveSpeed;
+            origin = new Vector2(bounds.min.x, bounds.min.y);
         }
         else
         {
             transform.position += Vector3.right * Time.deltaTime * MoveSpeed;
+            origin = new Vector2(bounds.max.x, bounds.min.y);
         }
-
-        Vector2 origin = new Vector2(
-            EnemyRb.transform.position.x + ForwardDistance, EnemyRb.transform.position.y +FootDistance);
-
-        //Bounds bounds = GetComponent<Collider2D>().bounds;
-
-        // バウンディングボックスの左下の位置を取得
-        //Vector2 Origin1 = new Vector2(bounds.min.x, bounds.min.y);
+        
+        Vector2 bottomLeft = bounds.min;
 
         RaycastHit2D hit = Physics2D.Raycast(origin, Vector2.down, RayDistance);
         
@@ -53,6 +52,14 @@ public class EnemyMove : MonoBehaviour
         
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Wall" || collision.gameObject.tag == "enemy")
+        {
+            Flip();
+        }
+    }
+
     // 反転
     private void Flip()
     {
@@ -60,15 +67,6 @@ public class EnemyMove : MonoBehaviour
         Vector3 localScale = transform.localScale;
         localScale.x *= -1;  
         transform.localScale = localScale;
-        ForwardDistance *= -1;
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(collision.gameObject.tag == "Wall" || collision.gameObject.tag == "enemy")
-        {
-            Flip();
-        }
     }
 
 }
