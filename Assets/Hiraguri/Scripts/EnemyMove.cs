@@ -4,6 +4,7 @@ using UnityEngine.EventSystems;
 
 public class EnemyMove : MonoBehaviour
 {
+
     Rigidbody2D EnemyRb;
     [SerializeField] float MoveSpeed = 5f;
     bool EnemyDirectionFlg;                                          // オブジェクトがどっちの方向に進むか判断する trueが左
@@ -31,12 +32,19 @@ public class EnemyMove : MonoBehaviour
         {
             transform.position += Vector3.right * Time.deltaTime * MoveSpeed;
         }
-        
+
         Vector2 origin = new Vector2(
             EnemyRb.transform.position.x + ForwardDistance, EnemyRb.transform.position.y +FootDistance);
-        RaycastHit2D hit = Physics2D.Raycast(origin, Vector2.down, RayDistance);
 
+        //Bounds bounds = GetComponent<Collider2D>().bounds;
+
+        // バウンディングボックスの左下の位置を取得
+        //Vector2 Origin1 = new Vector2(bounds.min.x, bounds.min.y);
+
+        RaycastHit2D hit = Physics2D.Raycast(origin, Vector2.down, RayDistance);
+        
         Debug.DrawLine(origin, origin + DirectionDown * RayDistance, Color.red);
+        
 
         if(hit.collider == null)
         {
