@@ -4,91 +4,71 @@ using UnityEngine.EventSystems;
 
 public class EnemyMove : MonoBehaviour
 {
-    Rigidbody2D enemyRb;
-    Collider2D enemyCol;
-    [SerializeField] float moveSpeed = 5;
-    Vector2 direction = Vector2.down;
-    float rayDistance = 0.3f;
-    float forwardDistance = -0.5f;
-    float footDistance = -0.7f;
-    bool enemyDirectionFlg = true;
-    [SerializeField] float maxSpeed = 5;
-    
+
+    Rigidbody2D EnemyRb;
+    [SerializeField] float MoveSpeed = 5f;
+    bool EnemyDirectionFlg;                                          // オブジェクトがどっちの方向に進むか判断する trueが左
+
+    Vector2 DirectionDown = Vector2.down;                            // Rayを下向きに飛ばす
+    [SerializeField] float RayDistance = 0.3f;                                        //Rayの飛距離
+    [SerializeField] float ForwardDistance = -0.5f;                  //Rayのスタート位置 x 最初は左向きだから-
+    [SerializeField] float FootDistance = -0.7f;                     //Rayのスタート位置 y サイズによって調整が必要
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        enemyRb = GetComponent<Rigidbody2D>();
-        enemyCol = GetComponent<Collider2D>();
+        EnemyRb = GetComponent<Rigidbody2D>();
+        EnemyDirectionFlg = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Move();
-
-        /*if (enemyDirectionFlg)
+        if (EnemyDirectionFlg)
         {
-            transform.position += Vector3.left * Time.deltaTime * moveSpeed;
+            transform.position += Vector3.left * Time.deltaTime * MoveSpeed;
         }
         else
         {
-            transform.position += Vector3.right * Time.deltaTime * moveSpeed;
+            transform.position += Vector3.right * Time.deltaTime * MoveSpeed;
         }
 
-        Vector2 origin = new Vector2(enemyRb.transform.position.x + forwardDistance, enemyRb.transform.position.y + footDistance);
-        RaycastHit2D hit = Physics2D.Raycast(origin, Vector2.down, rayDistance);
+        Vector2 origin = new Vector2(
+            EnemyRb.transform.position.x + ForwardDistance, EnemyRb.transform.position.y +FootDistance);
 
-        Debug.DrawLine(origin, origin + direction * rayDistance, Color.red);
+        //Bounds bounds = GetComponent<Collider2D>().bounds;
+
+        // バウンディングボックスの左下の位置を取得
+        //Vector2 Origin1 = new Vector2(bounds.min.x, bounds.min.y);
+
+        RaycastHit2D hit = Physics2D.Raycast(origin, Vector2.down, RayDistance);
+        
+        Debug.DrawLine(origin, origin + DirectionDown * RayDistance, Color.red);
+        
 
         if(hit.collider == null)
         {
             Flip();
-        }*/
+        }
         
     }
 
-    private void Move()
-    {
-        
-        Vector2 origin = new Vector2(enemyRb.position.x, enemyRb.position.y - enemyCol.bounds.extents.y);
-        RaycastHit2D hit = Physics2D.Raycast(origin, Vector2.down, 0.1f);
-
-        if (hit.collider != null)
-        {
-            
-            Vector2 groundNormal = hit.normal;
-
-            
-            Vector2 moveDirection = new Vector2(groundNormal.y, -groundNormal.x).normalized;
-
-            
-            enemyRb.linearVelocity = moveDirection * moveSpeed;
-        }
-        else
-        {
-            
-            enemyRb.linearVelocity = Vector2.zero;
-        }
-
-        // 蜷代″縺ｮ蜿崎ｻ｢蜃ｦ逅�
-        if (enemyDirectionFlg && enemyRb.linearVelocity.x < 0)
-        {
-            Flip();
-        }
-        else if (!enemyDirectionFlg && enemyRb.linearVelocity.x > 0)
-        {
-            Flip();
-        }
-    }
-
+    // 反転
     private void Flip()
     {
-        enemyDirectionFlg = !enemyDirectionFlg;
+        EnemyDirectionFlg = !EnemyDirectionFlg;
         Vector3 localScale = transform.localScale;
         localScale.x *= -1;  
         transform.localScale = localScale;
-        forwardDistance *= -1;
+        ForwardDistance *= -1;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Wall" || collision.gameObject.tag == "enemy")
+        {
+            Flip();
+        }
     }
 
 }
