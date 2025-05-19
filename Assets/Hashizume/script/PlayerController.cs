@@ -5,7 +5,7 @@ public class PlayerController2D : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public float jumpForce = 7f;
-    public GameObject hitbox;
+    public GameObject swordHitbox;
     private Rigidbody2D rb;
     private bool isGrounded;
     private Animator animator;
@@ -14,7 +14,6 @@ public class PlayerController2D : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        hitbox.SetActive(false);
     }
 
     void Update()
@@ -47,17 +46,16 @@ public class PlayerController2D : MonoBehaviour
         }
     }
 
-    // Animation Event から呼ばれる
-    public void Attack()
+    void Attack()
     {
         Debug.Log("攻撃");
+        animator.SetTrigger("attack");  // ←アニメーション再生
         StartCoroutine(EnableSwordHitbox());
     }
-
     IEnumerator EnableSwordHitbox()
     {
-        hitbox.SetActive(true);
+        swordHitbox.SetActive(true);
         yield return new WaitForSeconds(0.2f);
-        hitbox.SetActive(false);
+        swordHitbox.SetActive(false);
     }
 }
