@@ -60,4 +60,10 @@ public class PlayerController2D : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         hitbox.SetActive(false);
     }
+
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        // 接触が終了したら地面から離れたと判断
+        isGrounded = false;
+    }
 }
