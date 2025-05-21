@@ -33,10 +33,6 @@ public class FallFloor : MonoBehaviour
             fallCount = 0; //fallCount‚ğ‰Šú‰»
             floor_touch = true; //floor_touch‚ğtrue‚É‚·‚éB
         }
-        else
-        {
-            floor_touch = false;
-        }
     }
     void DownStart()
     {
