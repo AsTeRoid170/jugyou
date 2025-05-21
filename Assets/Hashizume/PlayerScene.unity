@@ -154,7 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   jumpForce: 7
-  swordHitbox: {fileID: 0}
+  hitbox: {fileID: 2122780343}
 --- !u!61 &101321016
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -193,7 +193,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 10.24, y: 10.24}
+    oldSize: {x: 2.79, y: 4.66}
     newSize: {x: 10.24, y: 10.24}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -272,7 +272,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 4334783836991956000, guid: 9c207a06e85060146ba264aabcb5ac12, type: 3}
+  m_Sprite: {fileID: 4236558876878595492, guid: 0e97802ab56cd7a4fae86a808f702a26, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
