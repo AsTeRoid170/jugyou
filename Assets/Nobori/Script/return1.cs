@@ -9,4 +9,8 @@ public class StageSelectScene : MonoBehaviour
     {
         SceneManager.LoadScene("TitleScene");
     }
+    public void menureturn_buttton()
+    {
+        SceneManager.LoadScene("MenuScene");
+    }
 }
