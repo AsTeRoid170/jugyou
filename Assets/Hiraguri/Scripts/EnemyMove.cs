@@ -54,6 +54,12 @@ public class EnemyMove : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if(!EnemyDirectionFlg || collision.transform.position.x < origin.x)
+        {
+
+        }
+
+
         if (collision.gameObject.tag == "Wall" || collision.gameObject.tag == "enemy")
         {
             Flip();
