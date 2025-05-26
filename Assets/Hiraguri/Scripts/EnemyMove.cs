@@ -7,7 +7,7 @@ public class EnemyMove : MonoBehaviour
 
     Rigidbody2D EnemyRb;
     [SerializeField] float MoveSpeed = 5f;
-    bool EnemyDirectionFlg;                                          // オブジェクトがどっちの方向に進むか判断する trueが左
+    bool enemyDirectionFlg;                                          // オブジェクトがどっちの方向に進むか判断する trueが左
 
     Vector2 DirectionDown = Vector2.down;                            // Rayを下向きに飛ばす
     [SerializeField] float RayDistance = 0.3f;                                        //Rayの飛距離
@@ -18,7 +18,7 @@ public class EnemyMove : MonoBehaviour
     void Start()
     {
         EnemyRb = GetComponent<Rigidbody2D>();
-        EnemyDirectionFlg = true;
+        enemyDirectionFlg = true;
     }
 
     // Update is called once per frame
@@ -27,7 +27,7 @@ public class EnemyMove : MonoBehaviour
 
         bounds = GetComponent<Collider2D>().bounds;
 
-        if (EnemyDirectionFlg)
+        if (enemyDirectionFlg)
         {
             transform.position += Vector3.left * Time.deltaTime * MoveSpeed;
             origin = new Vector2(bounds.min.x, bounds.min.y);
@@ -54,22 +54,20 @@ public class EnemyMove : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(!EnemyDirectionFlg || collision.transform.position.x < origin.x)
-        {
-
-        }
-
-
+        
         if (collision.gameObject.tag == "Wall" || collision.gameObject.tag == "enemy")
         {
             Flip();
         }
+        
+
+        
     }
 
     // 反転
     private void Flip()
     {
-        EnemyDirectionFlg = !EnemyDirectionFlg;
+        enemyDirectionFlg = !enemyDirectionFlg;
         Vector3 localScale = transform.localScale;
         localScale.x *= -1;  
         transform.localScale = localScale;
