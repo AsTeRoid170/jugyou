@@ -13,6 +13,7 @@ TagManager:
   - PlayerBallet
   - Switch
   - Float Floor
+  - Player Circle
   layers:
   - Default
   - TransparentFX
