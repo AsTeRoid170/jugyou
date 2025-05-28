@@ -27,7 +27,7 @@ public class pCamera : MonoBehaviour
     void MoveCamera()
     {
         // ‰¡•ûŒü‚É‚¾‚¯’Ç]
-        transform.position = new Vector2(playerTransform.position.x,
-            transform.position.y);
+        transform.position = new Vector3(playerTransform.position.x,
+            transform.position.y,transform.position.z);
     }
 }
