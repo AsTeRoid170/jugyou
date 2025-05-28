@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour
 {
-    [SerializeField] int AttackPower;
+    [SerializeField] int AttackPower = 15;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -18,10 +18,15 @@ public class EnemyAttack : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player")
         {
-            //プレイヤーの攻撃を受けるメソッド
-            //PlayerHealth.TakeDamage(AttackPower);
+            Debug.Log("Enemy攻撃");
+            PlayerHealth player = collision.gameObject.GetComponent<PlayerHealth>();
+            if (player != null)
+            {
+                Debug.Log("nemy攻撃");
+                player.TakeDamage(AttackPower);
+            }
         }
     }
 }
