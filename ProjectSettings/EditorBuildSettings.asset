@@ -9,13 +9,13 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
-    path: Assets/Nobori/TitleScene.unity
+    path: Assets/Title/TitleScene.unity
     guid: 2ad2af0f93c413a45bb1d15340888838
   - enabled: 1
-    path: Assets/Nobori/StageSelectScene.unity
+    path: Assets/Title/StageSelectScene.unity
     guid: 2f02a7bcc1037e448937855d06ba63b9
   - enabled: 1
-    path: Assets/Nobori/MenuScene.unity
+    path: Assets/Title/MenuScene.unity
     guid: 7bd35555849c8f448852ad9e26166ccc
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
