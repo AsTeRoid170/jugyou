@@ -28,6 +28,6 @@ public class pCamera : MonoBehaviour
     {
         // ‰¡•ûŒü‚É‚¾‚¯’Ç]
         transform.position = new Vector3(playerTransform.position.x,
-            transform.position.y,transform.position.z);
+            playerTransform.position.y,transform.position.z);
     }
 }
