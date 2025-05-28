@@ -1,16 +1,16 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class stage1 : MonoBehaviour
+public class Stage1Scene : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    //public void kettei1_button()
+    //{
+        //SceneManager.LoadScene("TitleScene");
+    //}
+    public void return3_button()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        SceneManager.LoadScene("StageSelectScene");
     }
 }
