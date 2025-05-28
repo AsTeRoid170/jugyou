@@ -9,6 +9,7 @@ public class PlayerController2D : MonoBehaviour
     private Rigidbody2D rb;
     private bool isGrounded;
     private Animator animator;
+    private bool facingRight = true;
 
     void Start()
     {
@@ -24,6 +25,17 @@ public class PlayerController2D : MonoBehaviour
         if (Input.GetKey(KeyCode.D)) moveX = 1f;
 
         rb.linearVelocity = new Vector2(moveX * moveSpeed, rb.linearVelocity.y);
+
+        if (moveX > 0)
+        {
+            transform.localScale = new Vector3((float)0.75, (float)0.8, 1);  // 右向き
+            facingRight = true;
+        }
+        else if (moveX < 0)
+        {
+            transform.localScale = new Vector3((float)-0.75, (float)0.8, 1); // 左向きに反転
+            facingRight = false;
+        }
 
         // Wジャンプ
         if (Input.GetKeyDown(KeyCode.W) && isGrounded)
@@ -56,6 +68,11 @@ public class PlayerController2D : MonoBehaviour
 
     IEnumerator EnableSwordHitbox()
     {
+        // 向きによってヒットボックスの位置を変更
+        Vector3 offset = new Vector3(facingRight ? 1.5f : 2.5f, 0, 0); // X方向に左右移動
+        hitbox.transform.localPosition = offset;
+
+
         hitbox.SetActive(true);
         yield return new WaitForSeconds(0.2f);
         hitbox.SetActive(false);
