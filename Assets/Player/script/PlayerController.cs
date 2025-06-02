@@ -7,7 +7,10 @@ public class PlayerController2D : MonoBehaviour
     public float jumpForce = 7f;
     public GameObject hitbox;
     private Rigidbody2D rb;
-    private bool isGrounded;
+    public LayerMask floorLayer;
+    public Transform floorCheck;
+    public float floorCheckRadius = 0.1f;
+    private bool isGrounded = false;
     private Animator animator;
     private bool facingRight = true;
 
@@ -20,28 +23,22 @@ public class PlayerController2D : MonoBehaviour
 
     void Update()
     {
+        CheckGrounded();
+
+
         float moveX = 0f;
         if (Input.GetKey(KeyCode.A)) moveX = -1f;
         if (Input.GetKey(KeyCode.D)) moveX = 1f;
 
         rb.linearVelocity = new Vector2(moveX * moveSpeed, rb.linearVelocity.y);
 
-        if (moveX > 0)
-        {
-            transform.localScale = new Vector3((float)0.75, (float)0.8, 1);  // 右向き
-            facingRight = true;
-        }
-        else if (moveX < 0)
-        {
-            transform.localScale = new Vector3((float)-0.75, (float)0.8, 1); // 左向きに反転
-            facingRight = false;
-        }
+        if (moveX > 0 && !facingRight) Flip();
+        if (moveX < 0 && facingRight) Flip();
 
         // Wジャンプ
         if (Input.GetKeyDown(KeyCode.W) && isGrounded)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
-            isGrounded = false;
         }
 
         // Space攻撃
@@ -51,12 +48,18 @@ public class PlayerController2D : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void CheckGrounded()
     {
-        if (collision.contacts[0].normal.y > 0.5f)
-        {
-            isGrounded = true;
-        }
+        Collider2D hit = Physics2D.OverlapCircle(floorCheck.position, floorCheckRadius, floorLayer);
+        isGrounded = hit != null;
+    }
+
+    void Flip()
+    {
+        facingRight = !facingRight;
+        Vector3 scale = transform.localScale;
+        scale.x *= -1;
+        transform.localScale = scale;
     }
 
     // Animation Event から呼ばれる
@@ -78,9 +81,7 @@ public class PlayerController2D : MonoBehaviour
         hitbox.SetActive(false);
     }
 
-    void OnCollisionExit2D(Collision2D collision)
-    {
-        // 接触が終了したら地面から離れたと判断
-        isGrounded = false;
-    }
+
+
+
 }
