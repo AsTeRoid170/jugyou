@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  jumpForce: 7
+  jumpForce: 6.35
   hitbox: {fileID: 2122780343}
   floorLayer:
     serializedVersion: 2
