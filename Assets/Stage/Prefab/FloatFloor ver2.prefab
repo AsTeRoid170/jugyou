@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4829512588319886547}
   - component: {fileID: 4805169243230940921}
   - component: {fileID: 2918529822041231807}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FloatFloor ver2
   m_TagString: GrandPlatform
   m_Icon: {fileID: 0}
