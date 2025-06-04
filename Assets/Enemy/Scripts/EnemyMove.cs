@@ -4,20 +4,18 @@ using UnityEngine.EventSystems;
 
 public class EnemyMove : MonoBehaviour
 {
-
-    Rigidbody2D EnemyRb;
-    [SerializeField] float MoveSpeed = 5f;
+    [SerializeField] float MoveSpeed = 5f;                           // 移動スピード
     bool enemyDirectionFlg;                                          // オブジェクトがどっちの方向に進むか判断する trueが左
 
+    // Rayで崖端にいるか判断→反転
     Vector2 DirectionDown = Vector2.down;                            // Rayを下向きに飛ばす
-    [SerializeField] float RayDistance = 0.3f;                                        //Rayの飛距離
-    Vector2 origin;
-    Bounds bounds;
+    [SerializeField] float RayDistance = 0.3f;                       // Rayの飛距離
+    Vector2 origin;                                                  // Ray発射位置
+    Bounds bounds;                                                   // オブジェクトに斜め下の位置を取得する用
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        EnemyRb = GetComponent<Rigidbody2D>();
         enemyDirectionFlg = true;
     }
 

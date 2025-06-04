@@ -1,7 +1,6 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class BossBeam : MonoBehaviour
 {
     [SerializeField] float speed = 10f;                 // 弾速
     [SerializeField] int AttackPower = 15;              // 攻撃力
@@ -16,11 +15,13 @@ public class Bullet : MonoBehaviour
 
         // プレイヤーの位置を取得
         player = GameObject.FindWithTag("Player");
-        if(player != null)
+        if (player != null)
         {
             targetPosition = player.transform.position;
         }
         direction = (targetPosition - (Vector2)transform.position).normalized;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0, 0, angle - 90);
 
     }
 
@@ -28,7 +29,7 @@ public class Bullet : MonoBehaviour
     void Update()
     {
         // 移動
-        transform.Translate(direction * speed * Time.deltaTime);
+        transform.Translate(direction * speed * Time.deltaTime, Space.World);
         Destroy(gameObject, Interval);
 
     }
@@ -36,7 +37,7 @@ public class Bullet : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // enemyに当たらない それ以外に当たったら消える
-        if(collision.gameObject.tag != "enemy")
+        if (collision.gameObject.tag != "enemy")
         {
             // プレイヤーに当たったらダメージを与える
             if (collision.gameObject.tag == "Player")
@@ -47,6 +48,6 @@ public class Bullet : MonoBehaviour
 
             Destroy(gameObject);
         }
-        
+
     }
 }
