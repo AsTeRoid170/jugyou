@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class goal : MonoBehaviour
+public class Goal : MonoBehaviour
 {
     public void OnCollisionEnter2D(Collision2D collision)
     {
