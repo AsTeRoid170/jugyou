@@ -1,0 +1,423 @@
+fileFormatVersion: 2
+guid: 58136aa574b31a54e9e1291a9a6aab28
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6612757020819734730
+    second: walker_0
+  - first:
+      213: 4832591622999017304
+    second: walker_1
+  - first:
+      213: -5966778643939320509
+    second: walker_2
+  - first:
+      213: -4263880052124718506
+    second: walker_3
+  - first:
+      213: 7804876146045062755
+    second: walker_4
+  - first:
+      213: -3937835597777309204
+    second: walker_5
+  - first:
+      213: -3753170138548333575
+    second: walker_6
+  - first:
+      213: -2114080238919810050
+    second: walker_7
+  - first:
+      213: 7726548221334346862
+    second: walker_8
+  - first:
+      213: 7228091505131374435
+    second: walker_9
+  - first:
+      213: 6788832773522087571
+    second: walker_10
+  - first:
+      213: 4311389105524070002
+    second: walker_11
+  - first:
+      213: -4088817606496732469
+    second: walker_12
+  - first:
+      213: -7833940931753248177
+    second: walker_13
+  - first:
+      213: 7002373096698211308
+    second: walker_14
+  - first:
+      213: -4451107977950776616
+    second: walker_15
+  - first:
+      213: -711841645361968710
+    second: walker_16
+  - first:
+      213: -4947075349252820240
+    second: walker_17
+  - first:
+      213: -2230867785242620944
+    second: walker_18
+  - first:
+      213: 1074921982900850053
+    second: walker_19
+  - first:
+      213: -53197856198950587
+    second: walker_20
+  - first:
+      213: 4298991817366028903
+    second: walker_21
+  - first:
+      213: -3525303004764428044
+    second: walker_22
+  - first:
+      213: 3557509397604230462
+    second: walker_23
+  - first:
+      213: -7716117036249649663
+    second: walker_24
+  - first:
+      213: -241622658630837716
+    second: walker_25
+  - first:
+      213: -3722632850286643928
+    second: walker_26
+  - first:
+      213: -3375531829954711780
+    second: walker_27
+  - first:
+      213: 2807393411399818327
+    second: walker_28
+  - first:
+      213: 4177797754093589087
+    second: walker_29
+  - first:
+      213: 748011697952244977
+    second: walker_30
+  - first:
+      213: -330899257209639862
+    second: walker_31
+  - first:
+      213: -2137543189517511081
+    second: walker_32
+  - first:
+      213: -3795888538834723440
+    second: walker_33
+  - first:
+      213: -2330455609200142545
+    second: walker_34
+  - first:
+      213: -2621418408284967733
+    second: walker_35
+  - first:
+      213: 4599892634371336072
+    second: walker_36
+  - first:
+      213: 4720394261474088294
+    second: walker_37
+  - first:
+      213: -7811182894270529637
+    second: walker_38
+  - first:
+      213: 4300403734670443919
+    second: walker_39
+  - first:
+      213: 6605111570994656064
+    second: walker_40
+  - first:
+      213: -4172056585162912630
+    second: walker_41
+  - first:
+      213: 7123270911151876016
+    second: walker_42
+  - first:
+      213: -7379538642391346910
+    second: walker_43
+  - first:
+      213: 529756676430170608
+    second: walker_44
+  - first:
+      213: 8240657617512747949
+    second: walker_45
+  - first:
+      213: 5590433891996611686
+    second: walker_46
+  - first:
+      213: -2415332244173615712
+    second: walker_47
+  - first:
+      213: -7782417641851285445
+    second: walker_48
+  - first:
+      213: 1076184277960378623
+    second: walker_49
+  - first:
+      213: -4007376729521956389
+    second: walker_50
+  - first:
+      213: -1088798452783370219
+    second: walker_51
+  - first:
+      213: 5793506716082662234
+    second: walker_52
+  - first:
+      213: -4505681575903528259
+    second: walker_53
+  - first:
+      213: 3484051391194928988
+    second: walker_54
+  - first:
+      213: -4664739767576464241
+    second: walker_55
+  - first:
+      213: 1241139732368560136
+    second: walker_56
+  - first:
+      213: 7700250605727284041
+    second: walker_57
+  - first:
+      213: 7091059338015989210
+    second: walker_58
+  - first:
+      213: -7599206571010844763
+    second: walker_59
+  - first:
+      213: -2115419384239599147
+    second: walker_60
+  - first:
+      213: -1282547595044496141
+    second: walker_61
+  - first:
+      213: -4897746242342720479
+    second: walker_62
+  - first:
+      213: -8873607324723757128
+    second: walker_63
+  - first:
+      213: 4994610736987012138
+    second: walker_64
+  - first:
+      213: -5551610287818395142
+    second: walker_65
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 165
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: walker_0
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 103
+        width: 435
+        height: 750
+      alignment: 9
+      pivot: {x: 0.48076996, y: 0.50469494}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2f0e244a78be644cb8fdcc676de7a77
+      internalID: 1274693267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walker_1
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 100
+        width: 472
+        height: 752
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcbc020df1c3afe4298e30af5c26890b
+      internalID: 308497465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walker_2
+      rect:
+        serializedVersion: 2
+        x: 1100
+        y: 102
+        width: 436
+        height: 749
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99528433389eba2408c35850d8d1238b
+      internalID: 312138683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 56db32a0793dced4d9356cf5e0b4daff
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      walker_0: 1274693267
+      walker_1: 308497465
+      walker_2: 312138683
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
