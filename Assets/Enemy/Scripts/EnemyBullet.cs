@@ -1,7 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class EnemyBullet : MonoBehaviour
 {
     [SerializeField] float speed = 10f;                 // íeë¨
     [SerializeField] int AttackPower = 15;              // çUåÇóÕ
