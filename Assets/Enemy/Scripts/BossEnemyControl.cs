@@ -1,5 +1,7 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class BossEnemyControl : MonoBehaviour
 {
@@ -16,22 +18,37 @@ public class BossEnemyControl : MonoBehaviour
     State currState;                                    // 現在の状態
     GameObject player;                                  // プレイヤーの位置で行動を決めたい
     float direction;                                    // プレイヤーとの距離
-    Vector2 playerPosition;                             //
-    Vector2 startPosition;
-    [SerializeField] float punchDelay = 5.0f;
+    Vector2 playerPosition;                             // プレイヤーの位置
+    //Vector2 startPosition;
+
+    // move用
+    [SerializeField] float moveSpeed = 2f;                  // 歩くスピード
+    [SerializeField] float moveRange = 10f;                 // プレイヤーがどれくらいの距離で歩くか
+    float moveDirection = 1;                                // 歩く距離
+    float timer;                                            // 歩く時間時間制御用
+    [SerializeField] float changeDirectionInterval = 1f;    // 歩く時間
+
+    // punch用
+    [SerializeField] float punchDelay = 5.0f;               // 何秒間隔でパンチするか
+    [SerializeField] float punchRange = 7f;                 // プレイヤーがどれくらいの距離でパンチするか
+    [SerializeField] GameObject punchHitBox;
+
+    // beam用
+    [SerializeField] float beamRange = 15f;
     [SerializeField] float beamDelay = 5.0f;
     [SerializeField] GameObject beam;
     [SerializeField] GameObject beamPoint;
     float beamDelayTime;
     float punchDelayTime;
-    //[SerializeField] float returnDirection = 16f;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         player = GameObject.FindWithTag("Player");
-        startPosition = transform.position;
+        //startPosition = transform.position;
+        timer = changeDirectionInterval;
+        punchDelayTime = punchDelay;
         beamDelayTime = beamDelay;
         currState = State.Idle;
     }
@@ -56,20 +73,26 @@ public class BossEnemyControl : MonoBehaviour
         {
             ChangeState(State.Idle);
         }
+        // Punchへの切り替え
+        else if (direction < punchRange)
+        {
+            //Debug.Log("a");
+            ChangeState(State.Punch);
+        }
         // Moveへの切り替え 
-        else if (player.tag == "enemy")
+        else if (direction < moveRange )
         {
             ChangeState(State.Move);
         }
-        // Punchへの切り替え
-        else if (direction < 8)
-        {
-            ChangeState(State.Punch);
-        }
         // Beamへの切り替え
-        else if (direction < 15)
+        else if (direction < beamRange)
         {
             ChangeState(State.Beam);
+        }
+
+        if (currState != State.Punch)
+        {
+            punchHitBox.SetActive(false);
         }
 
         // 行動切り替え
@@ -87,11 +110,17 @@ public class BossEnemyControl : MonoBehaviour
 
             // 攻撃 こぶしを振り下ろす
             case State.Punch:
+                
                 BossPunch();
+                if(!punchHitBox.activeInHierarchy)
+                {
+                    BossMove();
+                }
                 break;
 
             // 攻撃 ビーム
             case State.Beam:
+                BossMove();
                 BossBeam();
                 break;
         }
@@ -106,14 +135,43 @@ public class BossEnemyControl : MonoBehaviour
     {
 
     }
+
     private void BossMove()
     {
-        
+        if (player != null)
+        {
+            transform.Translate(Vector2.right * moveDirection * moveSpeed * Time.deltaTime);
+
+            // 一定時間ごとに方向を変える
+            timer -= Time.deltaTime;
+            if (timer <= 0f)
+            {
+                moveDirection *= -1f; // 向きを反転
+                timer = changeDirectionInterval + Random.Range(-0.5f, 0.5f); // 少しバラつかせる
+            }
+        }
     }
 
     private void BossPunch()
     {
-        //Debug.Log("punch");
+        if(punchDelayTime > punchDelay)
+        {
+            Debug.Log("a");
+            punchHitBox.SetActive(true);
+            
+            punchDelayTime = 0;
+        }
+        else
+        {
+            punchDelayTime += Time.deltaTime;
+            if (punchDelayTime > 0.5)
+            {
+                punchHitBox.SetActive(false);
+            }
+            
+
+            
+        }
     }
 
     private void BossBeam()
@@ -146,4 +204,5 @@ public class BossEnemyControl : MonoBehaviour
             }
         }
     }
+
 }
