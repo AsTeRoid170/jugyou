@@ -31,6 +31,7 @@ public class PlayerController2D : MonoBehaviour
         if (Input.GetKey(KeyCode.D)) moveX = 1f;
 
         rb.linearVelocity = new Vector2(moveX * moveSpeed, rb.linearVelocity.y);
+        animator.SetBool("isWalking", moveX != 0);
 
         if (moveX > 0 && !facingRight) Flip();
         if (moveX < 0 && facingRight) Flip();
