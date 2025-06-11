@@ -426,8 +426,8 @@ GameObject:
   - component: {fileID: 770730400}
   - component: {fileID: 770730399}
   - component: {fileID: 770730401}
-  - component: {fileID: 770730403}
   - component: {fileID: 770730402}
+  - component: {fileID: 770730403}
   m_Layer: 5
   m_Name: stage1
   m_TagString: Untagged
@@ -556,7 +556,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 770730403}
-        m_TargetAssemblyTypeName: MenuScene, Assembly-CSharp
+        m_TargetAssemblyTypeName: StageSelectScene, Assembly-CSharp
         m_MethodName: stage_button
         m_Mode: 1
         m_Arguments:
@@ -576,7 +576,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 770730397}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b7a4abf134c4d5479ceb0ab0e40a2ec, type: 3}
+  m_Script: {fileID: 11500000, guid: b54d539a29194c1479411c1fd6013032, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &875536765

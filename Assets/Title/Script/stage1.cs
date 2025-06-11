@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Stage1Scene : MonoBehaviour
+public class sta1seScene : MonoBehaviour
 {
-    //public void kettei1_button()
-    //{
-        //SceneManager.LoadScene("TitleScene");
-    //}
+    public void kettei1_button()
+    {
+        SceneManager.LoadScene("Stage1");
+    }
     public void return3_button()
     {
         SceneManager.LoadScene("StageSelectScene");
