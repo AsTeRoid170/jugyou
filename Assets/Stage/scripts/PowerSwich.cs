@@ -21,12 +21,10 @@ public class PowerSwich : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-           /** Debug.Log("ゲームクリアー！");
-            if ()
+            foreach (Transform n in this.gameObject.transform)
             {
-                Destroy(child.gameObject);
+                GameObject.Destroy(n.gameObject);
             }
-           **/
         }
     }
 }
