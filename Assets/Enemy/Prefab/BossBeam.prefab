@@ -140,4 +140,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   AttackPower: 0
+  player: {fileID: 8629309311485594178, guid: a928b63ddca85d8478eb3425babdc06a, type: 3}
   Interval: 10

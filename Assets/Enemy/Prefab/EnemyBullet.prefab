@@ -104,6 +104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   AttackPower: 15
+  player: {fileID: 8629309311485594178, guid: a928b63ddca85d8478eb3425babdc06a, type: 3}
   Interval: 10
 --- !u!58 &3478475698302293681
 CircleCollider2D:
