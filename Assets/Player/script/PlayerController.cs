@@ -47,6 +47,33 @@ public class PlayerController2D : MonoBehaviour
         {
             animator.SetTrigger("attack");
         }
+
+
+        if (!isGrounded)
+        {
+            if (rb.linearVelocity.y > 0.01f)
+            {
+                animator.Play("JumpUp");
+            }
+            else if (rb.linearVelocity.y < 0.5f)
+            {
+                animator.Play("JumpFall");
+            }
+        }
+
+
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.contacts[0].normal.y > 0.5f)
+        {
+            if (!isGrounded)
+            {
+                animator.SetTrigger("JumpLand");
+            }
+            isGrounded = true;
+        }
     }
 
     void CheckGrounded()
