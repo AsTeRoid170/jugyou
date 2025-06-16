@@ -257,7 +257,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 7bf34bdad6934744d913f3bc79170800
-      internalID: -674144192
+      internalID: 2838884954085599039
       vertices: []
       indices: 
       edges: []
@@ -279,7 +279,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 847eadd7808d0634b884a687df16c0d9
-      internalID: -1494062382
+      internalID: -6281391967097168644
       vertices: []
       indices: 
       edges: []
@@ -301,7 +301,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: bc09a5d215c96704fb15b6cbbcfebbb8
-      internalID: -2016897234
+      internalID: -9173123002422154839
       vertices: []
       indices: 
       edges: []
@@ -320,13 +320,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-<<<<<<< HEAD:Assets/Player/img/c5340e17-1e27-4557-ba71-84b1083d2a56.png.meta
-      c5340e17-1e27-4557-ba71-84b1083d2a56_0: -5835478928228337351
-=======
-      Jump_Fall: -1494062382
-      Jump_Land: -2016897234
-      Jump_Up: -674144192
->>>>>>> origin/pl10:Assets/Player/img/Jump (2).png.meta
+      Jump_Fall: -6281391967097168644
+      Jump_Land: -9173123002422154839
+      Jump_Up: 2838884954085599039
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
