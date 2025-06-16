@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BulletEnemyControl : MonoBehaviour
+public class BulletEnemyController : MonoBehaviour
 {
     [SerializeField] GameObject bulletPoint;            // ’e ”­ŽËˆÊ’u
     [SerializeField] GameObject bullet;                 // ’e
