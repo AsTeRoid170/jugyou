@@ -324,7 +324,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 877221990}
-        m_TargetAssemblyTypeName: Stage1selectScene, Assembly-CSharp
+        m_TargetAssemblyTypeName: sta1seScene, Assembly-CSharp
         m_MethodName: kettei1_button
         m_Mode: 1
         m_Arguments:

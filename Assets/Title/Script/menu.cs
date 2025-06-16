@@ -13,8 +13,12 @@ public class StageSelectScene : MonoBehaviour
     {
         SceneManager.LoadScene("MenuScene");
     }
-    public void stage_button()
+    public void stage1_button()
     {
         SceneManager.LoadScene("sta1seScene");
+    }
+    public void stage2_button()
+    {
+        SceneManager.LoadScene("sta2seScene");
     }
 }
