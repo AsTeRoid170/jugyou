@@ -1,10 +1,7 @@
 using UnityEngine;
 
-public class PowerSwich : MonoBehaviour
-    
+public class Item : MonoBehaviour
 {
-    public int keynam;
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,10 +18,7 @@ public class PowerSwich : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            foreach (Transform n in this.gameObject.transform)
-            {
-                GameObject.Destroy(n.gameObject);
-            }
+            Destroy(this.gameObject);
         }
     }
 }
