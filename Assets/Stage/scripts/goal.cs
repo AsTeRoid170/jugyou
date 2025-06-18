@@ -12,8 +12,9 @@ public class Goal : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            //SceneManager.LoadScene("GameClearScene");
+            
             Debug.Log(sceneNum);
+            SceneManager.LoadScene("GameClearScene");
         }
     }
 }
