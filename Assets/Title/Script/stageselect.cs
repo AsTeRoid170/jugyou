@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class StageSelectScene : MonoBehaviour
+public class stageselect : MonoBehaviour
 {
     public void return1_button()
     {
