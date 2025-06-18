@@ -3,15 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MenuScene : MonoBehaviour
+public class sta2seScene : MonoBehaviour
 {
-    public void return2_button()
+    public void kettei2_button()
     {
-        SceneManager.LoadScene("TitleScene");
+        SceneManager.LoadScene("Stage2");
     }
-    public void select1_button()
+    public void return4_button()
     {
         SceneManager.LoadScene("StageSelectScene");
     }
-
 }
