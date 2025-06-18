@@ -1,16 +1,21 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ChangeStageSelect : MonoBehaviour
+public class GameOverButtonControl : MonoBehaviour
 {
     int stageNum;
-    string stageName;
-    private void Start()
+    void Start()
     {
         stageNum = PlayerPrefs.GetInt("StageNum", 0);
-        //stageNum =;
+
     }
-    public void change_button()
+
+    public void change_RetryButton()
+    {
+        SceneManager.LoadScene("second");
+    }
+
+    public void change_StageSelectButton()
     {
         SceneManager.LoadScene("StageSelectScene");
     }

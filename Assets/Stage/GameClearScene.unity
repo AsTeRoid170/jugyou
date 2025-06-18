@@ -340,8 +340,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 299833367}
-        m_TargetAssemblyTypeName: Retry, Assembly-CSharp
-        m_MethodName: change_button
+        m_TargetAssemblyTypeName: GameClearButtonControl, Assembly-CSharp
+        m_MethodName: change_RetryButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -398,7 +398,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 299833362}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b250e5e015f1264438627b49fcc79f9c, type: 3}
+  m_Script: {fileID: 11500000, guid: edb9d6f0ca32ffe43af3cde2e7c5e863, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &485256253
@@ -690,6 +690,8 @@ MonoBehaviour:
   player: {fileID: 0}
   xOffset: 6
   yFixed: 0
+  upperYThreshold: 2.5
+  camYSpeed: 5
   zoomOut: 5
 --- !u!1 &529625988
 GameObject:
@@ -1239,8 +1241,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 974359763}
-        m_TargetAssemblyTypeName: ChangeNextStage, Assembly-CSharp
-        m_MethodName: change_button
+        m_TargetAssemblyTypeName: GameClearButtonControl, Assembly-CSharp
+        m_MethodName: change_NextStageButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1297,7 +1299,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 974359758}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bec59f19ce7c82d49ba6852fa5a0a01a, type: 3}
+  m_Script: {fileID: 11500000, guid: edb9d6f0ca32ffe43af3cde2e7c5e863, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1241036344
@@ -1385,8 +1387,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1241036349}
-        m_TargetAssemblyTypeName: ChangeStageSelect, Assembly-CSharp
-        m_MethodName: change_button
+        m_TargetAssemblyTypeName: GameClearButtonControl, Assembly-CSharp
+        m_MethodName: change_StageSelectButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1443,7 +1445,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1241036344}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfc62a2197cf76549bbadb57327824d8, type: 3}
+  m_Script: {fileID: 11500000, guid: edb9d6f0ca32ffe43af3cde2e7c5e863, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1789608875
