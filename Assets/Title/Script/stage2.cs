@@ -7,7 +7,7 @@ public class sta2seScene : MonoBehaviour
 {
     public void kettei2_button()
     {
-        SceneManager.LoadScene("Stage1");
+        SceneManager.LoadScene("Stage2");
     }
     public void return4_button()
     {
