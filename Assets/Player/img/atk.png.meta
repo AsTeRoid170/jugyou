@@ -155,9 +155,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 63
-        y: 238
-        width: 293
-        height: 466
+        y: 259
+        width: 279
+        height: 445
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -198,10 +198,10 @@ TextureImporter:
       name: atk_2
       rect:
         serializedVersion: 2
-        x: 432
-        y: 242
-        width: 586
-        height: 449
+        x: 439
+        y: 260
+        width: 579
+        height: 438
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -242,10 +242,10 @@ TextureImporter:
       name: atk_4
       rect:
         serializedVersion: 2
-        x: 1016
-        y: 242
-        width: 516
-        height: 449
+        x: 1005
+        y: 260
+        width: 527
+        height: 436
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
