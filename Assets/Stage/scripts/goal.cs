@@ -14,6 +14,7 @@ public class Goal : MonoBehaviour
         {
             
             Debug.Log(sceneNum);
+            PlayerPrefs.SetInt("PlayStageNum",sceneNum);
             SceneManager.LoadScene("GameClearScene");
         }
     }
