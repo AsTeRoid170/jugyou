@@ -6,18 +6,18 @@ public class GameClearButtonControl : MonoBehaviour
     int stageNum;
     void Start()
     {
-        stageNum = PlayerPrefs.GetInt("StageNum", 0);
+        stageNum = PlayerPrefs.GetInt("PlayStageNum", 0);
 
     }
 
     public void change_NextStageButton()
     {
-        SceneManager.LoadScene("");
+        SceneManager.LoadScene(stageNum+1);
     }
 
     public void change_RetryButton()
     {
-        SceneManager.LoadScene("second");
+        SceneManager.LoadScene(stageNum);
     }
 
     public void change_StageSelectButton()
