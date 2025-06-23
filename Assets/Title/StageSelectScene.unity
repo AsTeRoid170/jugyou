@@ -556,7 +556,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 770730403}
-        m_TargetAssemblyTypeName: StageSelectScene, Assembly-CSharp
+        m_TargetAssemblyTypeName: stageselect, Assembly-CSharp
         m_MethodName: stage1_button
         m_Mode: 1
         m_Arguments:
@@ -576,7 +576,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 770730397}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b54d539a29194c1479411c1fd6013032, type: 3}
+  m_Script: {fileID: 11500000, guid: 4b7a4abf134c4d5479ceb0ab0e40a2ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &875536765
@@ -591,7 +591,7 @@ GameObject:
   - component: {fileID: 875536770}
   - component: {fileID: 875536769}
   - component: {fileID: 875536768}
-  - component: {fileID: 875536767}
+  - component: {fileID: 875536771}
   m_Layer: 5
   m_Name: return1
   m_TagString: Untagged
@@ -618,18 +618,6 @@ RectTransform:
   m_AnchoredPosition: {x: 239.48001, y: -136.13}
   m_SizeDelta: {x: 90.59, y: 44.8}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &875536767
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 875536765}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b54d539a29194c1479411c1fd6013032, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &875536768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -674,8 +662,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 875536767}
-        m_TargetAssemblyTypeName: StageSelectScene, Assembly-CSharp
+      - m_Target: {fileID: 875536771}
+        m_TargetAssemblyTypeName: stageselect, Assembly-CSharp
         m_MethodName: return1_button
         m_Mode: 1
         m_Arguments:
@@ -728,6 +716,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 875536765}
   m_CullTransparentMesh: 1
+--- !u!114 &875536771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 875536765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b7a4abf134c4d5479ceb0ab0e40a2ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1386244021
 GameObject:
   m_ObjectHideFlags: 0
@@ -929,7 +929,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1559036885}
-        m_TargetAssemblyTypeName: StageSelectScene, Assembly-CSharp
+        m_TargetAssemblyTypeName: stageselect, Assembly-CSharp
         m_MethodName: menureturn_buttton
         m_Mode: 1
         m_Arguments:
@@ -949,7 +949,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1559036880}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b54d539a29194c1479411c1fd6013032, type: 3}
+  m_Script: {fileID: 11500000, guid: 4b7a4abf134c4d5479ceb0ab0e40a2ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1585245544
@@ -1212,7 +1212,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1878162953}
-        m_TargetAssemblyTypeName: StageSelectScene, Assembly-CSharp
+        m_TargetAssemblyTypeName: stageselect, Assembly-CSharp
         m_MethodName: stage2_button
         m_Mode: 1
         m_Arguments:
@@ -1232,7 +1232,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1878162947}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b54d539a29194c1479411c1fd6013032, type: 3}
+  m_Script: {fileID: 11500000, guid: 4b7a4abf134c4d5479ceb0ab0e40a2ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2007337600

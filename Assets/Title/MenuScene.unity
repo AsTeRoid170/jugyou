@@ -210,7 +210,7 @@ GameObject:
   - component: {fileID: 300645843}
   - component: {fileID: 300645842}
   - component: {fileID: 300645845}
-  - component: {fileID: 300645844}
+  - component: {fileID: 300645846}
   m_Layer: 5
   m_Name: stageselect
   m_TagString: Untagged
@@ -279,18 +279,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 300645840}
   m_CullTransparentMesh: 1
---- !u!114 &300645844
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 300645840}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b7a4abf134c4d5479ceb0ab0e40a2ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &300645845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -335,8 +323,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 300645844}
-        m_TargetAssemblyTypeName: MenuScene, Assembly-CSharp
+      - m_Target: {fileID: 300645846}
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
         m_MethodName: select1_button
         m_Mode: 1
         m_Arguments:
@@ -347,6 +335,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &300645846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 300645840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b54d539a29194c1479411c1fd6013032, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &417666813
 GameObject:
   m_ObjectHideFlags: 0
@@ -848,7 +848,7 @@ GameObject:
   - component: {fileID: 2119453341}
   - component: {fileID: 2119453340}
   - component: {fileID: 2119453343}
-  - component: {fileID: 2119453342}
+  - component: {fileID: 2119453344}
   m_Layer: 5
   m_Name: return2
   m_TagString: Untagged
@@ -917,18 +917,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2119453338}
   m_CullTransparentMesh: 1
---- !u!114 &2119453342
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2119453338}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b7a4abf134c4d5479ceb0ab0e40a2ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2119453343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -973,8 +961,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2119453342}
-        m_TargetAssemblyTypeName: MenuScene, Assembly-CSharp
+      - m_Target: {fileID: 2119453344}
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
         m_MethodName: return2_button
         m_Mode: 1
         m_Arguments:
@@ -985,6 +973,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &2119453344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2119453338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b54d539a29194c1479411c1fd6013032, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class sta1seScene : MonoBehaviour
+public class stage1 : MonoBehaviour
 {
     public void kettei1_button()
     {
