@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4511211028865484393}
   - component: {fileID: 8875983916037018442}
   - component: {fileID: 6727930967235056925}
+  - component: {fileID: 3706133238623442229}
   m_Layer: 0
   m_Name: NormalEnemy
   m_TagString: enemy
@@ -196,3 +197,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHp: 15
+--- !u!95 &3706133238623442229
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3877405569148539312}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9f54f6c4d92cb72429a2bbaad93810a1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
