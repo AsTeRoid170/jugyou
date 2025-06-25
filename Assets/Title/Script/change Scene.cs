@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class TitleScene : MonoBehaviour
+public class chageScene : MonoBehaviour
 {
     public void Change_button()
     {
