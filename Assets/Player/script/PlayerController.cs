@@ -69,10 +69,20 @@ public class PlayerController2D : MonoBehaviour
             if (rb.linearVelocity.y > 0.1f)
             {
                 animator.Play("JumpUp");
+                // 攻撃（Spaceキー）
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    animator.SetTrigger("attack");
+                }
             }
             else if (rb.linearVelocity.y < -0.1f)
             {
                 animator.Play("JumpFall");
+                // 攻撃（Spaceキー）
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    animator.SetTrigger("attack");
+                }
             }
         }
     }
@@ -84,6 +94,11 @@ public class PlayerController2D : MonoBehaviour
             if (!isGrounded)
             {
                 animator.SetTrigger("JumpLand");
+                // 攻撃（Spaceキー）
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    animator.SetTrigger("attack");
+                }
             }
             isGrounded = true;
         }
