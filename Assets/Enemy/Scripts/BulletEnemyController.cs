@@ -7,17 +7,29 @@ public class BulletEnemyController : MonoBehaviour
     [SerializeField] float Interval = 5.0f;             // 発射間隔
     GameObject player;                                  // プレイヤーの位置によって向きを変える
 
+    Animator animator;                                  // アニメーター
+    float animatorCount = 0f;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         player = GameObject.FindWithTag("Player");
-        InvokeRepeating("Shoot", 0.1f, Interval);       // 一定間隔で弾を撃つ
+        animator = GetComponent<Animator>();
+        InvokeRepeating("Shoot",0, Interval);       // 一定間隔で弾を撃つ
         
     }
 
     // Update is called once per frame
     void Update()
     {
+        // アニメーター処理
+        animatorCount += Time.deltaTime;
+        if (animatorCount > Interval - 0.35)
+        {
+            animator.SetTrigger("AttackTrigger");
+            animatorCount = 0;
+        }
+
         // プレイヤーの方を向く
         if (player != null)
         {
