@@ -60,49 +60,18 @@ public class PlayerController2D : MonoBehaviour
         // 攻撃（Spaceキー）
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            Debug.Log("攻撃トリガー発火！");
             animator.SetTrigger("attack");
         }
 
-        // 空中アニメーション制御
-        if (!isGrounded)
-        {
-            if (rb.linearVelocity.y > 0.1f)
-            {
-                animator.Play("JumpUp");
-                // 攻撃（Spaceキー）
-                if (Input.GetKeyDown(KeyCode.Space))
-                {
-                    animator.SetTrigger("attack");
-                }
-            }
-            else if (rb.linearVelocity.y < -0.1f)
-            {
-                animator.Play("JumpFall");
-                // 攻撃（Spaceキー）
-                if (Input.GetKeyDown(KeyCode.Space))
-                {
-                    animator.SetTrigger("attack");
-                }
-            }
-        }
+        AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+        bool isAttacking = stateInfo.IsTag("Attack"); // 攻撃ステートに "Attack" タグを設定しておく
+
+
+        animator.SetFloat("VelocityY", rb.linearVelocity.y);
+        animator.SetBool("isGrounded", isGrounded);
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.contacts[0].normal.y > 0.5f)
-        {
-            if (!isGrounded)
-            {
-                animator.SetTrigger("JumpLand");
-                // 攻撃（Spaceキー）
-                if (Input.GetKeyDown(KeyCode.Space))
-                {
-                    animator.SetTrigger("attack");
-                }
-            }
-            isGrounded = true;
-        }
-    }
 
     void CheckGrounded()
     {
