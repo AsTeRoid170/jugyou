@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      background_city_skyline_visualisation04_0: 576539217806023007
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
