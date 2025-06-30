@@ -1,13 +1,23 @@
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
+
 {
     [SerializeField] int MaxHp = 15;
     int CurrentHp;
+
+    [SerializeField] Slider hpSlider;
+    [SerializeField] Image fillImage;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         CurrentHp = MaxHp;
+        hpSlider.maxValue = MaxHp;
+        hpSlider.value = CurrentHp;
+        UpdateHPUI();
     }
 
     // Update is called once per frame
@@ -24,10 +34,33 @@ public class PlayerHealth : MonoBehaviour
             Debug.Log("Ž€‚ñ‚Å‚Ü‚·");
             Die();
         }
+        UpdateHPUI();
     }
+
+    void UpdateHPUI()
+    {
+        hpSlider.value = CurrentHp;
+
+        float hpRatio = (float)CurrentHp / MaxHp;
+
+        if (hpRatio > 0.5f)
+        {
+            fillImage.color = Color.green; // HP‚‚¢
+        }
+        else if (hpRatio > 0.25f)
+        {
+            fillImage.color = Color.yellow; // HP’†
+        }
+        else
+        {
+            fillImage.color = Color.red; // HP’á‚¢
+        }
+    }
+
     private void Die()
     {
         Destroy(gameObject);
     }
+
 }
 
