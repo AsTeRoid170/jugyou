@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class BulletEnemyController : MonoBehaviour
 {
@@ -15,7 +16,8 @@ public class BulletEnemyController : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player");
         animator = GetComponent<Animator>();
-        InvokeRepeating("Shoot",0, Interval);       // 一定間隔で弾を撃つ
+        StartCoroutine(Shoot());
+        //InvokeRepeating("Shoot",0, Interval);       // 一定間隔で弾を撃つ
         
     }
 
@@ -23,12 +25,12 @@ public class BulletEnemyController : MonoBehaviour
     void Update()
     {
         // アニメーター処理
-        animatorCount += Time.deltaTime;
-        if (animatorCount > Interval - 0.35)
-        {
-            animator.SetTrigger("AttackTrigger");
-            animatorCount = 0;
-        }
+        //animatorCount += Time.deltaTime;
+        //if (animatorCount > Interval - 0.35)
+        //{
+           // animator.SetTrigger("AttackTrigger");
+            //animatorCount = 0;
+        //}
 
         // プレイヤーの方を向く
         if (player != null)
@@ -49,8 +51,28 @@ public class BulletEnemyController : MonoBehaviour
     }
 
     // 弾を生成する
-    private void Shoot()
+    /*private void Shoot()
     {
+        animator.SetTrigger("AttackTrigger");
         Instantiate(bullet, bulletPoint.transform.position, Quaternion.identity);
+    }*/
+
+    // コルーチン
+    private IEnumerator Shoot()
+    {
+        while (true)
+        {
+            animator.SetTrigger("AttackTrigger");
+
+            // 3秒間待つ
+            yield return new WaitForSeconds(1.1f);
+
+            // 3秒後に原点にワープ
+            Instantiate(bullet, bulletPoint.transform.position, Quaternion.identity);
+
+            yield return new WaitForSeconds(Interval);
+        }
+
+        
     }
 }
