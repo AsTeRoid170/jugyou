@@ -3,13 +3,20 @@ using UnityEngine;
 
 public class BeltConveyor : MonoBehaviour
 {
-    public float speed = 3.0f;
+    private float speed = 3.0f;
 
     float diffX = 0.0f;
     readonly List<GameObject> gameObjects = new();
 
     void Start()
     {
+        Vector3 scale = transform.localScale;
+        Debug.Log("X軸スケール: " + scale.x);
+        if (scale.x < 0)
+        {
+            speed = speed * -1;
+            Debug.Log("スピード: " + speed);
+        }
         diffX = speed * Time.fixedDeltaTime;
     }
 
