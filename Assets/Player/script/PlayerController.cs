@@ -98,14 +98,14 @@ public class PlayerController2D : MonoBehaviour
     IEnumerator EnableSwordHitbox()
     {
         // 攻撃ヒットボックスの位置を向きに応じて調整
-        Vector3 offset = new Vector3(facingRight ? 1.5f : -2.5f, 0, 0);
+        Vector3 offset = new Vector3(1.5f, 0, 0);
         hitbox.transform.localPosition = offset;
 
         // ヒットボックスの横幅をパワーで変える（オプション）
-        if (status != null)
-        {
-            hitbox.transform.localScale = new Vector3(status.power, 1f, 1f);
-        }
+        //if (status != null)
+        //{
+        //    hitbox.transform.localScale = new Vector3(status.power, 1f, 1f);
+        //}
 
         hitbox.SetActive(true);
         yield return new WaitForSeconds(0.2f);
