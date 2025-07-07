@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3363550035924831452}
   - component: {fileID: 5938493475118688587}
   - component: {fileID: 7373823930253401713}
+  - component: {fileID: 7866312073711628147}
   m_Layer: 0
   m_Name: BulletEnemy
   m_TagString: enemy
@@ -193,7 +194,28 @@ MonoBehaviour:
   bulletPoint: {fileID: 4850406345959462159}
   bullet: {fileID: 8266233665821229381, guid: c2112bbf1205895499cef8984dfcf402, type: 3}
   Interval: 5
-  player: {fileID: 8629309311485594178, guid: a928b63ddca85d8478eb3425babdc06a, type: 3}
+--- !u!95 &7866312073711628147
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3722527086586455164}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d41ae650aef0d0d48a668e1ea8774860, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4850406345959462159
 GameObject:
   m_ObjectHideFlags: 0
