@@ -21,7 +21,8 @@ public class EnemyHealth : MonoBehaviour
     public void TakeDamage(int amount)
     {
         CurrentHp -= amount;
-        Debug.Log(CurrentHp);
+        //Debug.Log(CurrentHp);
+        Debug.Log(amount);
         if (CurrentHp <= 0)
         {
             Die();
