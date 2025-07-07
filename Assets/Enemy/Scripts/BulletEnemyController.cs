@@ -9,7 +9,6 @@ public class BulletEnemyController : MonoBehaviour
     GameObject player;                                  // プレイヤーの位置によって向きを変える
 
     Animator animator;                                  // アニメーター
-    float animatorCount = 0f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -24,14 +23,6 @@ public class BulletEnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // アニメーター処理
-        //animatorCount += Time.deltaTime;
-        //if (animatorCount > Interval - 0.35)
-        //{
-           // animator.SetTrigger("AttackTrigger");
-            //animatorCount = 0;
-        //}
-
         // プレイヤーの方を向く
         if (player != null)
         {
@@ -50,14 +41,7 @@ public class BulletEnemyController : MonoBehaviour
         
     }
 
-    // 弾を生成する
-    /*private void Shoot()
-    {
-        animator.SetTrigger("AttackTrigger");
-        Instantiate(bullet, bulletPoint.transform.position, Quaternion.identity);
-    }*/
-
-    // コルーチン
+    // コルーチン 弾を撃つ
     private IEnumerator Shoot()
     {
         while (true)

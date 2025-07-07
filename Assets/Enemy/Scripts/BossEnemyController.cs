@@ -39,10 +39,14 @@ public class BossEnemyController : MonoBehaviour
     [SerializeField] GameObject beam;                       // ビームオブジェクト
     [SerializeField] GameObject beamPoint;                  // ビーム発射位置
     float beamDelayTime;                                    // ディレイカウント用              
-    
+
+    // アニメーター
+    [SerializeField] Animator animatorSprite;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        // playerを見つける
         player = GameObject.FindWithTag("Player");
         timer = changeDirectionInterval;
         punchDelayTime = punchDelay;
@@ -163,6 +167,7 @@ public class BossEnemyController : MonoBehaviour
         else
         {
             punchDelayTime += Time.deltaTime;
+            // 一定時間当たり判定を出す
             if (punchDelayTime > 0.5)
             {
                 punchHitBox.SetActive(false);
