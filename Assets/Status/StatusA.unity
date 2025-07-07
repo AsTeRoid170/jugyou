@@ -696,6 +696,14 @@ PrefabInstance:
       propertyPath: MaxHp
       value: 1000
       objectReference: {fileID: 0}
+    - target: {fileID: 5036535254636009432, guid: a928b63ddca85d8478eb3425babdc06a, type: 3}
+      propertyPath: hpSlider
+      value: 
+      objectReference: {fileID: 315511314}
+    - target: {fileID: 5036535254636009432, guid: a928b63ddca85d8478eb3425babdc06a, type: 3}
+      propertyPath: fillImage
+      value: 
+      objectReference: {fileID: 315511313}
     - target: {fileID: 5707141393835590116, guid: a928b63ddca85d8478eb3425babdc06a, type: 3}
       propertyPath: jumpForce
       value: 11
@@ -706,7 +714,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5707141393835590116, guid: a928b63ddca85d8478eb3425babdc06a, type: 3}
       propertyPath: floorLayer.m_Bits
-      value: 0
+      value: 256
       objectReference: {fileID: 0}
     - target: {fileID: 5739490714345872660, guid: a928b63ddca85d8478eb3425babdc06a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -760,6 +768,28 @@ PrefabInstance:
       insertIndex: 4
       addedObject: {fileID: 1924144636}
   m_SourcePrefab: {fileID: 100100000, guid: a928b63ddca85d8478eb3425babdc06a, type: 3}
+--- !u!114 &315511313 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5217970515392045341, guid: a928b63ddca85d8478eb3425babdc06a, type: 3}
+  m_PrefabInstance: {fileID: 315511312}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &315511314 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8406390542074417321, guid: a928b63ddca85d8478eb3425babdc06a, type: 3}
+  m_PrefabInstance: {fileID: 315511312}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &403171709
 GameObject:
   m_ObjectHideFlags: 0

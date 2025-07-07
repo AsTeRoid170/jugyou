@@ -1,6 +1,9 @@
 using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// プレイヤーの2D操作（移動・ジャンプ・攻撃）を制御するクラス
+/// </summary>
 public class PlayerController2D : MonoBehaviour
 {
     public GameObject hitbox;
@@ -16,7 +19,8 @@ public class PlayerController2D : MonoBehaviour
     private Rigidbody2D rb;
     private Animator animator;
 
-    private PlayerStatus status; // ステータスのいじるスクリプトを参照する
+    // ステータス（power → jumpForce → moveSpeed の順）
+    private PlayerStatus status;
 
     void Start()
     {
@@ -24,7 +28,6 @@ public class PlayerController2D : MonoBehaviour
         animator = GetComponent<Animator>();
         hitbox.SetActive(false);
 
-        // 同じGameObjectまたは親子関係にあるPlayerStatusを取得
         status = GetComponent<PlayerStatus>();
         if (status == null)
         {
@@ -40,45 +43,48 @@ public class PlayerController2D : MonoBehaviour
         if (Input.GetKey(KeyCode.A)) moveX = -1f;
         if (Input.GetKey(KeyCode.D)) moveX = 1f;
 
+        // ステータスから移動速度を取得して移動処理
         if (status != null)
         {
-            // ステータスを参照して移動速度を設定
             rb.linearVelocity = new Vector2(moveX * status.moveSpeed, rb.linearVelocity.y);
         }
 
         animator.SetBool("isWalking", moveX != 0);
 
+        // 左右反転処理
         if (moveX > 0 && !facingRight) Flip();
         if (moveX < 0 && facingRight) Flip();
 
-        // ジャンプ（Wキー）※地面にいる時のみ
+        // ジャンプ処理（Wキー）※velocityを直接変更
         if (Input.GetKeyDown(KeyCode.W) && isGrounded && status != null)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, status.jumpForce);
         }
 
-        // 攻撃（Spaceキー）
+        // 攻撃トリガー
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Debug.Log("攻撃トリガー発火！");
             animator.SetTrigger("attack");
         }
 
-        AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
-        bool isAttacking = stateInfo.IsTag("Attack"); // 攻撃ステートに "Attack" タグを設定しておく
-
-
+        // アニメーション補助情報
         animator.SetFloat("VelocityY", rb.linearVelocity.y);
         animator.SetBool("isGrounded", isGrounded);
     }
 
-
+    /// <summary>
+    /// 地面との接触判定
+    /// </summary>
     void CheckGrounded()
     {
         Collider2D hit = Physics2D.OverlapCircle(floorCheck.position, floorCheckRadius, floorLayer);
         isGrounded = hit != null;
     }
 
+    /// <summary>
+    /// 向きを左右反転
+    /// </summary>
     void Flip()
     {
         facingRight = !facingRight;
@@ -87,25 +93,23 @@ public class PlayerController2D : MonoBehaviour
         transform.localScale = scale;
     }
 
-    // アニメーションイベントから呼ばれる攻撃処理
+    /// <summary>
+    /// 攻撃アニメーションイベントから呼ばれる処理
+    /// </summary>
     public void Attack()
     {
         Debug.Log("攻撃");
-
         StartCoroutine(EnableSwordHitbox());
     }
 
+    /// <summary>
+    /// 一時的にヒットボックスを表示する
+    /// </summary>
     IEnumerator EnableSwordHitbox()
     {
-        // 攻撃ヒットボックスの位置を向きに応じて調整
-        Vector3 offset = new Vector3(facingRight ? 1.5f : -2.5f, 0, 0);
+        // 反転したときも攻撃判定あり
+        Vector3 offset = new Vector3(1.5f , 0, 0);
         hitbox.transform.localPosition = offset;
-
-        // ヒットボックスの横幅をパワーで変える（オプション）
-        if (status != null)
-        {
-            hitbox.transform.localScale = new Vector3(status.power, 1f, 1f);
-        }
 
         hitbox.SetActive(true);
         yield return new WaitForSeconds(0.2f);
