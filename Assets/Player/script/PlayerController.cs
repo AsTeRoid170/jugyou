@@ -107,10 +107,23 @@ public class PlayerController2D : MonoBehaviour
     /// </summary>
     IEnumerator EnableSwordHitbox()
     {
+<<<<<<< HEAD
         // 反転したときも攻撃判定あり
         Vector3 offset = new Vector3(1.5f , 0, 0);
         hitbox.transform.localPosition = offset;
 
+=======
+        // 攻撃ヒットボックスの位置を向きに応じて調整
+        Vector3 offset = new Vector3(1.5f, 0, 0);
+        hitbox.transform.localPosition = offset;
+
+        // ヒットボックスの横幅をパワーで変える（オプション）
+        //if (status != null)
+        //{
+        //    hitbox.transform.localScale = new Vector3(status.power, 1f, 1f);
+        //}
+
+>>>>>>> origin/pl15
         hitbox.SetActive(true);
         yield return new WaitForSeconds(0.2f);
         hitbox.SetActive(false);
