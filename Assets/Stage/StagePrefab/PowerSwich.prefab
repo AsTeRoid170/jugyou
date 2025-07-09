@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 218354760726602534}
   - component: {fileID: 5514343286719484814}
   - component: {fileID: -2391908494936938463}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PowerSwich
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class DeathWall : MonoBehaviour
+public class DeathWalll : MonoBehaviour
 {
     private float MoveSpeed = 3.0f;
 
@@ -22,5 +22,5 @@ public class DeathWall : MonoBehaviour
     public void SpeedUp()
     {
         MoveSpeed++;
-    } 
+    }
 }
