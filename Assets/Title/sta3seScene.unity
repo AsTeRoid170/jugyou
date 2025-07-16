@@ -411,8 +411,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 877221990}
-        m_TargetAssemblyTypeName: sta1seScene, Assembly-CSharp
-        m_MethodName: kettei1_button
+        m_TargetAssemblyTypeName: stage3, Assembly-CSharp
+        m_MethodName: kettei3_button
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -431,7 +431,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 877221984}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61e2ee416c7d82f4d9b6d6de85ca6887, type: 3}
+  m_Script: {fileID: 11500000, guid: c336a0a489cd090448043095f9e5a02a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &988103028
@@ -560,8 +560,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 988103033}
-        m_TargetAssemblyTypeName: Stage1Scene, Assembly-CSharp
-        m_MethodName: return3_button
+        m_TargetAssemblyTypeName: stage3, Assembly-CSharp
+        m_MethodName: return5_button
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -580,7 +580,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 988103028}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61e2ee416c7d82f4d9b6d6de85ca6887, type: 3}
+  m_Script: {fileID: 11500000, guid: c336a0a489cd090448043095f9e5a02a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1234349748
@@ -645,7 +645,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 200
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -670,7 +670,7 @@ Transform:
   m_GameObject: {fileID: 1234349748}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 348, y: 194, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -897,7 +897,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u30B9\u30C6\u30FC\u30B81"
+  m_Text: "\u30B9\u30C6\u30FC\u30B83"
 --- !u!222 &1526342192
 CanvasRenderer:
   m_ObjectHideFlags: 0

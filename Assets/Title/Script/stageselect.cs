@@ -21,4 +21,8 @@ public class stageselect : MonoBehaviour
     {
         SceneManager.LoadScene("sta2seScene");
     }
+    public void stage3_button()
+    {
+        SceneManager.LoadScene("sta3seScene");
+    }
 }
