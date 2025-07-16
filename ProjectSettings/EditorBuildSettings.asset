@@ -41,6 +41,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Stage/GameOverScene.unity
     guid: 9f92478f3a0e5dd49ab1170c914214d7
+  - enabled: 1
+    path: Assets/Stage/BossStage.unity
+    guid: 25b3db0191322ef488efb29fdf63a5d0
+  - enabled: 1
+    path: Assets/Stage/BossGameClearScene.unity
+    guid: 43ffda37c33bbee4a877f230665f9745
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

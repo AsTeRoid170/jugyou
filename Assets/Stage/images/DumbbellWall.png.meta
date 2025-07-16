@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      DumbbellWall_0: -4618691972642109968
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
