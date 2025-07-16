@@ -22,6 +22,7 @@ public class SwordHitbox : MonoBehaviour
             EnemyHealth enemy = collision.GetComponent<EnemyHealth>();
             if (enemy != null && playerStatus != null)
             {
+                Debug.Log("You way");
                 int damage = playerStatus.GetPower();  // UŒ‚—Í‚ğæ“¾
                 enemy.TakeDamage(damage);
             }
