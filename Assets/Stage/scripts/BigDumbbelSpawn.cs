@@ -8,13 +8,20 @@ public class BigDumbbelSpawn : MonoBehaviour
     // 生成する位置
     public Transform spawnPoint;
 
+    private float timer = 0.0f;
+
     // トリガーに入ったオブジェクトを検知
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerStay2D(Collider2D other)
     {
+        timer += Time.deltaTime;
         // 特定のタグを持つオブジェクトのみ反応する場合
         if (other.CompareTag("Player"))
         {
-            SpawnObject();
+            if(timer>100.0f)
+            {
+                SpawnObject();
+                timer = 0.0f;
+            }
         }
     }
 

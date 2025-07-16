@@ -496,19 +496,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 420821960085023328, guid: f5df613b920f7e74c83d474a3b15fc06, type: 3}
       propertyPath: m_LocalScale.x
-      value: 5
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 420821960085023328, guid: f5df613b920f7e74c83d474a3b15fc06, type: 3}
       propertyPath: m_LocalScale.y
-      value: 9
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 420821960085023328, guid: f5df613b920f7e74c83d474a3b15fc06, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.56
+      value: -9.53
       objectReference: {fileID: 0}
     - target: {fileID: 420821960085023328, guid: f5df613b920f7e74c83d474a3b15fc06, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.49
+      value: 4.09
       objectReference: {fileID: 0}
     - target: {fileID: 420821960085023328, guid: f5df613b920f7e74c83d474a3b15fc06, type: 3}
       propertyPath: m_LocalPosition.z
@@ -545,10 +545,6 @@ PrefabInstance:
     - target: {fileID: 6061289433518020533, guid: f5df613b920f7e74c83d474a3b15fc06, type: 3}
       propertyPath: m_Name
       value: DumbbellWall
-      objectReference: {fileID: 0}
-    - target: {fileID: 6061289433518020533, guid: f5df613b920f7e74c83d474a3b15fc06, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
