@@ -58,6 +58,7 @@ public class BossEnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         // player‚ÌˆÊ’u‚ğæ“¾
         if (player != null)
         {
@@ -102,6 +103,7 @@ public class BossEnemyController : MonoBehaviour
         {
             // ‘Ò‹@ó‘Ô
             case State.Idle:
+               // animatorSprite.SetBool("Move", false);
                 BossIdel();
                 break;
 
@@ -138,6 +140,7 @@ public class BossEnemyController : MonoBehaviour
     private void BossIdel()
     {
         // ‰½‚à‚µ‚È‚¢
+        animatorSprite.SetTrigger("IdelTrigger");
     }
 
     // ‰E‰¶‰‚·‚é
@@ -145,7 +148,8 @@ public class BossEnemyController : MonoBehaviour
     {
         if (player != null)
         {
-            
+            //animatorSprite.SetBool("Move", true);
+            animatorSprite.SetTrigger("MoveTrigger");
             transform.Translate(Vector2.right * moveDirection * moveSpeed * Time.deltaTime);
             // ˆê’èŠÔ‚²‚Æ‚É•ûŒü‚ğ•Ï‚¦‚é
             timer -= Time.deltaTime;
