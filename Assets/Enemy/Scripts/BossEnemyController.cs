@@ -41,7 +41,7 @@ public class BossEnemyController : MonoBehaviour
     float beamDelayTime;                                    // ディレイカウント用              
 
     // アニメーター
-    [SerializeField] Animator animatorSprite;
+    Animator animatorSprite;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -52,6 +52,7 @@ public class BossEnemyController : MonoBehaviour
         punchDelayTime = punchDelay;
         beamDelayTime = beamDelay;
         currState = State.Idle;
+        animatorSprite = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -144,8 +145,8 @@ public class BossEnemyController : MonoBehaviour
     {
         if (player != null)
         {
+            
             transform.Translate(Vector2.right * moveDirection * moveSpeed * Time.deltaTime);
-
             // 一定時間ごとに方向を変える
             timer -= Time.deltaTime;
             if (timer <= 0f)
@@ -160,8 +161,8 @@ public class BossEnemyController : MonoBehaviour
     {
         if(punchDelayTime > punchDelay)
         {
+            animatorSprite.SetTrigger("AttackTrigger");
             punchHitBox.SetActive(true);
-            
             punchDelayTime = 0;
         }
         else
