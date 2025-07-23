@@ -10,15 +10,9 @@ public class NomalEnemyFlip : MonoBehaviour
         EnemyMove = GetComponentInParent<EnemyMove>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag != "Player")
+        if(collision.tag != "Player") // プレイヤー以外に当たったら反転
         {
             EnemyMove.Flip();
         }

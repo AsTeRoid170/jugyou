@@ -40,9 +40,10 @@ public class BossEnemyController : MonoBehaviour
     [SerializeField] GameObject beamPoint;                  // ビーム発射位置
     float beamDelayTime;                                    // ディレイカウント用              
 
-    // アニメーター
+    // アニメーター用
     Animator animatorSprite;
 
+    // se用
     [SerializeField] AudioClip AttackSe;
     [SerializeField] AudioClip BulletClip;
     AudioSource audioSource;
@@ -50,14 +51,16 @@ public class BossEnemyController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        // playerを見つける
-        player = GameObject.FindWithTag("Player");
+        player = GameObject.FindWithTag("Player");                  // playerを見つける
+
+        // それぞれの行動の制御用の時間設定
         timer = changeDirectionInterval;
         punchDelayTime = punchDelay;
         beamDelayTime = beamDelay;
         currState = State.Idle;
-        animatorSprite = GetComponentInChildren<Animator>();
-        audioSource = GetComponent<AudioSource>();
+
+        animatorSprite = GetComponentInChildren<Animator>();        // Animator取得
+        audioSource = GetComponent<AudioSource>();                  // AudioSource取得
     }
 
     // Update is called once per frame
@@ -108,7 +111,6 @@ public class BossEnemyController : MonoBehaviour
         {
             // 待機状態
             case State.Idle:
-               // animatorSprite.SetBool("Move", false);
                 BossIdel();
                 break;
 
@@ -170,18 +172,18 @@ public class BossEnemyController : MonoBehaviour
     {
         if(punchDelayTime > punchDelay)
         {
-            animatorSprite.SetTrigger("AttackTrigger");
-            audioSource.PlayOneShot(AttackSe);
-            punchHitBox.SetActive(true);
-            punchDelayTime = 0;
+            animatorSprite.SetTrigger("AttackTrigger");         // アニメーションスタート
+            audioSource.PlayOneShot(AttackSe);                  // seスタート
+            punchHitBox.SetActive(true);                        // 判定出す
+            punchDelayTime = 0;                                 // 時間制御リセット
         }
         else
         {
-            punchDelayTime += Time.deltaTime;
+            punchDelayTime += Time.deltaTime;                   // カウント
             // 一定時間当たり判定を出す
-            if (punchDelayTime > 0.5)
+            if (punchDelayTime > 0.5)                           // 攻撃の持続時間
             {
-                punchHitBox.SetActive(false);
+                punchHitBox.SetActive(false);                   // 判定消す
             }  
         }
     }
@@ -190,13 +192,13 @@ public class BossEnemyController : MonoBehaviour
     {
         if (beamDelayTime > beamDelay)
         {
-            audioSource.PlayOneShot(BulletClip);
-            Instantiate(beam, beamPoint.transform.position, Quaternion.identity);
-            beamDelayTime = 0f;
+            audioSource.PlayOneShot(BulletClip);                                    // seスタート
+            Instantiate(beam, beamPoint.transform.position, Quaternion.identity);   // ビーム出す
+            beamDelayTime = 0f;                                                     // 時間制御リセット
         }
         else
         {
-            beamDelayTime += Time.deltaTime;
+            beamDelayTime += Time.deltaTime;                                        // カウント
         }
         
     }
