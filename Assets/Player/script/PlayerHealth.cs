@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 
@@ -59,6 +60,9 @@ public class PlayerHealth : MonoBehaviour
 
     private void Die()
     {
+        int sceneNum = SceneManager.GetActiveScene().buildIndex;
+        PlayerPrefs.SetInt("PlayStageNum", sceneNum);
+        SceneManager.LoadScene("GameOverScene");
         Destroy(gameObject);
     }
 
