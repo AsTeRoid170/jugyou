@@ -3,21 +3,21 @@ using UnityEngine.UI;
 using TMPro; // TextMeshProを使うために必要
 
 /// <summary>
-/// プレイヤーのステータス（パワー／ジャンプ／スピード）をUIと連携し管理するクラス
+/// プレイヤーのステータスを管理するクラス
 /// </summary>
 public class PlayerStatus : MonoBehaviour
 {
     // ステータス値（初期値）
-    public int power = 1;         // 攻撃力（Power）
-    public int jumpForce = 7;     // ジャンプ力（Jump）
-    public int moveSpeed = 5;     // 移動速度（Speed）
+    public int power = 3;         // 攻撃力（Power）
+    public int jumpForce = 3;     // ジャンプ力（Jump）
+    public int moveSpeed = 3;     // 移動速度（Speed）
 
     // スライダーUI（Canvasからアサイン）
     public Slider powerSlider;
     public Slider jumpForceSlider;
     public Slider moveSpeedSlider;
 
-    // 各ステータスの値を表示するTextMeshPro（スライダー横）
+    // 各ステータスの値を表示するTextMeshPro
     public TMP_Text powerValueText;
     public TMP_Text jumpForceValueText;
     public TMP_Text moveSpeedValueText;
@@ -25,10 +25,13 @@ public class PlayerStatus : MonoBehaviour
     // 残りポイント表示用TextMeshPro
     public TMP_Text pointsRemainingText;
 
-    // 各ステータスの最大値（1項目あたり10）
-    private const int maxEachStatus = 10;
+    // 各ステータスの最小値（min=1,0にはならない）
+    private const int minValue = 1;
 
-    // 割り振り可能な最大合計ポイント（初期ステータスの合計）
+    // 各ステータスの最大値（1項目あたり5まで）
+    private const int maxValue = 5;
+
+    // 割り振り可能な最大合計ポイント（初期ステータスの合計 = 15）
     private int maxPoints;
 
     // 前回のスライダー値（比較して変化確認に使う）
@@ -36,6 +39,28 @@ public class PlayerStatus : MonoBehaviour
     private int prevJump;
     private int prevMove;
 
+
+    /// <summary>
+    /// シーン開始時にUI要素を自動割り当て
+    /// </summary>
+    private void Awake()
+    {
+        // GameObject名でUIオブジェクトを探して、対応するコンポーネントを取得
+        powerSlider = GameObject.Find("power")?.GetComponent<Slider>();
+        jumpForceSlider = GameObject.Find("jump")?.GetComponent<Slider>();
+        moveSpeedSlider = GameObject.Find("speed")?.GetComponent<Slider>();
+
+        powerValueText = GameObject.Find("P_value")?.GetComponent<TMP_Text>();
+        jumpForceValueText = GameObject.Find("J_value")?.GetComponent<TMP_Text>();
+        moveSpeedValueText = GameObject.Find("S_value")?.GetComponent<TMP_Text>();
+
+        pointsRemainingText = GameObject.Find("Points_Remaining")?.GetComponent<TMP_Text>();
+
+        // デバッグ用：nullチェック
+        if (powerSlider == null) Debug.LogWarning("PowerSlider が見つかりません。");
+        if (jumpForceSlider == null) Debug.LogWarning("JumpSlider が見つかりません。");
+        if (moveSpeedSlider == null) Debug.LogWarning("SpeedSlider が見つかりません。");
+    }
     /// <summary>
     /// 初期化処理（スライダー設定、初期ステータス反映）
     /// </summary>
@@ -49,7 +74,7 @@ public class PlayerStatus : MonoBehaviour
         prevJump = jumpForce;
         prevMove = moveSpeed;
 
-        // 各スライダーを設定（0～10、整数のみ）
+        // 各スライダーを設定（1～5、整数のみ）
         InitSlider(powerSlider, power);
         InitSlider(jumpForceSlider, jumpForce);
         InitSlider(moveSpeedSlider, moveSpeed);
@@ -103,8 +128,8 @@ public class PlayerStatus : MonoBehaviour
     {
         if (slider != null)
         {
-            slider.minValue = 0;
-            slider.maxValue = maxEachStatus;
+            slider.minValue = minValue;
+            slider.maxValue = maxValue;
             slider.wholeNumbers = true;
             slider.value = initialValue;
         }

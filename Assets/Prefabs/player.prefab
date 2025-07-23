@@ -670,9 +670,9 @@ GameObject:
   - component: {fileID: 558793750809695141}
   - component: {fileID: 6190088407765703575}
   - component: {fileID: 5707141393835590116}
-  - component: {fileID: 1190437370870291841}
   - component: {fileID: 5698736653639741277}
   - component: {fileID: 5036535254636009432}
+  - component: {fileID: 4429039781426652000}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -840,33 +840,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitbox: {fileID: 9181983500289189615}
+  camera: {fileID: 0}
   floorLayer:
     serializedVersion: 2
     m_Bits: 256
   floorCheck: {fileID: 9007000573910351867}
   floorCheckRadius: 0.1
---- !u!114 &1190437370870291841
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8629309311485594178}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a15d0157b0383834ea1bf4423777aac0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  jumpForce: 7
-  power: 1
-  moveSpeedSlider: {fileID: 0}
-  jumpForceSlider: {fileID: 0}
-  powerSlider: {fileID: 0}
-  moveSpeedValueText: {fileID: 0}
-  jumpForceValueText: {fileID: 0}
-  powerValueText: {fileID: 0}
-  pointsRemainingText: {fileID: 0}
 --- !u!95 &5698736653639741277
 Animator:
   serializedVersion: 7
@@ -904,6 +883,28 @@ MonoBehaviour:
   MaxHp: 30
   hpSlider: {fileID: 0}
   fillImage: {fileID: 0}
+--- !u!114 &4429039781426652000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8629309311485594178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a15d0157b0383834ea1bf4423777aac0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  power: 3
+  jumpForce: 3
+  moveSpeed: 3
+  powerSlider: {fileID: 0}
+  jumpForceSlider: {fileID: 0}
+  moveSpeedSlider: {fileID: 0}
+  powerValueText: {fileID: 0}
+  jumpForceValueText: {fileID: 0}
+  moveSpeedValueText: {fileID: 0}
+  pointsRemainingText: {fileID: 0}
 --- !u!1 &9007875743753315671
 GameObject:
   m_ObjectHideFlags: 0

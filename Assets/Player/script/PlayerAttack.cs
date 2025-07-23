@@ -24,7 +24,7 @@ public class SwordHitbox : MonoBehaviour
             {
                 Debug.Log("You way");
                 int damage = playerStatus.GetPower();  // UŒ‚—Í‚ğæ“¾
-                enemy.TakeDamage(damage);
+                enemy.TakeDamage(damage*2);
             }
         }
     }

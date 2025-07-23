@@ -7,6 +7,7 @@ using System.Collections;
 public class PlayerController2D : MonoBehaviour
 {
     public GameObject hitbox;
+    public  new pCamera camera;
 
     // 地面判定用
     public LayerMask floorLayer;
@@ -46,7 +47,7 @@ public class PlayerController2D : MonoBehaviour
         // ステータスから移動速度を取得して移動処理
         if (status != null)
         {
-            rb.linearVelocity = new Vector2(moveX * status.moveSpeed, rb.linearVelocity.y);
+            rb.linearVelocity = new Vector2(moveX * status.moveSpeed*2, rb.linearVelocity.y);
         }
 
         animator.SetBool("isWalking", moveX != 0);
@@ -58,7 +59,7 @@ public class PlayerController2D : MonoBehaviour
         // ジャンプ処理（Wキー）※velocityを直接変更
         if (Input.GetKeyDown(KeyCode.W) && isGrounded && status != null)
         {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, status.jumpForce);
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, status.jumpForce*3);
         }
 
         // 攻撃トリガー
@@ -78,7 +79,13 @@ public class PlayerController2D : MonoBehaviour
     /// </summary>
     void CheckGrounded()
     {
+        
         Collider2D hit = Physics2D.OverlapCircle(floorCheck.position, floorCheckRadius, floorLayer);
+        /*Debug.DrawRay(floorCheck.position, Vector3.right * floorCheckRadius, Color.red);
+        Debug.DrawRay(floorCheck.position, Vector3.left * floorCheckRadius, Color.red);
+        Debug.Log("Grounded: " + isGrounded);*/
+
+
         isGrounded = hit != null;
     }
 
@@ -114,5 +121,13 @@ public class PlayerController2D : MonoBehaviour
         hitbox.SetActive(true);
         yield return new WaitForSeconds(0.2f);
         hitbox.SetActive(false);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Floor"))
+        {
+            camera.CamPos(transform.position.y);
+        }
     }
 }
