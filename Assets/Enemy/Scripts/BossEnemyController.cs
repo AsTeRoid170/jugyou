@@ -52,7 +52,7 @@ public class BossEnemyController : MonoBehaviour
         punchDelayTime = punchDelay;
         beamDelayTime = beamDelay;
         currState = State.Idle;
-        animatorSprite = GetComponent<Animator>();
+        animatorSprite = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
