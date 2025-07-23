@@ -63,7 +63,7 @@ public class EnemyMove : MonoBehaviour
     }
 
     // ”½“]
-    private void Flip()
+    public void Flip()
     {
         enemyDirectionFlg = !enemyDirectionFlg;
         Vector3 localScale = transform.localScale;

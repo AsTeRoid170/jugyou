@@ -13,10 +13,9 @@ public class BulletEnemyController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        player = GameObject.FindWithTag("Player");
-        animator = GetComponent<Animator>();
-        StartCoroutine(Shoot());
-        //InvokeRepeating("Shoot",0, Interval);       // 一定間隔で弾を撃つ
+        player = GameObject.FindWithTag("Player");      // プレイヤーの位置取得用
+        animator = GetComponent<Animator>();            // Animator取得
+        StartCoroutine(Shoot());                        // コルーチンスタート
         
     }
 
@@ -48,12 +47,13 @@ public class BulletEnemyController : MonoBehaviour
         {
             animator.SetTrigger("AttackTrigger");
 
-            // 3秒間待つ
+            // アニメーションを鑑みて一定時間ストップ
             yield return new WaitForSeconds(1.1f);
 
-            // 3秒後に原点にワープ
+            // 弾生成
             Instantiate(bullet, bulletPoint.transform.position, Quaternion.identity);
 
+            // Interval間隔でこの処理をする
             yield return new WaitForSeconds(Interval);
         }
 
