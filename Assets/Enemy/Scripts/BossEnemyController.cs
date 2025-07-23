@@ -43,6 +43,10 @@ public class BossEnemyController : MonoBehaviour
     // アニメーター
     Animator animatorSprite;
 
+    [SerializeField] AudioClip AttackSe;
+    [SerializeField] AudioClip BulletClip;
+    AudioSource audioSource;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -53,6 +57,7 @@ public class BossEnemyController : MonoBehaviour
         beamDelayTime = beamDelay;
         currState = State.Idle;
         animatorSprite = GetComponentInChildren<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -166,6 +171,7 @@ public class BossEnemyController : MonoBehaviour
         if(punchDelayTime > punchDelay)
         {
             animatorSprite.SetTrigger("AttackTrigger");
+            audioSource.PlayOneShot(AttackSe);
             punchHitBox.SetActive(true);
             punchDelayTime = 0;
         }
@@ -184,7 +190,7 @@ public class BossEnemyController : MonoBehaviour
     {
         if (beamDelayTime > beamDelay)
         {
-
+            audioSource.PlayOneShot(BulletClip);
             Instantiate(beam, beamPoint.transform.position, Quaternion.identity);
             beamDelayTime = 0f;
         }
