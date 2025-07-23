@@ -37,6 +37,12 @@ public class PlayerHealth : MonoBehaviour
         }
         UpdateHPUI();
     }
+    public void TakeHeal()
+    {
+        CurrentHp = MaxHp;
+
+        UpdateHPUI();
+    }
 
     void UpdateHPUI()
     {

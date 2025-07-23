@@ -12,7 +12,6 @@ public class Goal : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            
             Debug.Log(sceneNum);
             PlayerPrefs.SetInt("PlayStageNum",sceneNum);
             SceneManager.LoadScene("GameClearScene");

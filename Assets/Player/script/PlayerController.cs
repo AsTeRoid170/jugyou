@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// プレイヤーの2D操作（移動・ジャンプ・攻撃）を制御するクラス
@@ -23,8 +24,11 @@ public class PlayerController2D : MonoBehaviour
     // ステータス（power → jumpForce → moveSpeed の順）
     private PlayerStatus status;
 
+    int sceneNum;
+
     void Start()
     {
+        sceneNum = SceneManager.GetActiveScene().buildIndex;
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         hitbox.SetActive(false);
@@ -38,6 +42,12 @@ public class PlayerController2D : MonoBehaviour
 
     void Update()
     {
+        if (transform.position.y < -8)
+        {
+            PlayerPrefs.SetInt("PlayStageNum", sceneNum);
+            SceneManager.LoadScene("GameOverScene");
+        }
+
         CheckGrounded();
 
         float moveX = 0f;

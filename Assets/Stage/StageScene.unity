@@ -857,6 +857,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  floorTransform: {fileID: 0}
   xOffset: 6
   yFixed: 0
   upperYThreshold: 2.5
@@ -2064,11 +2065,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 737699496168361216, guid: 43533148434e5094f826ae617d1785da, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 17.87102
+      value: 19.76
       objectReference: {fileID: 0}
     - target: {fileID: 737699496168361216, guid: 43533148434e5094f826ae617d1785da, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.27
+      value: -3.24
       objectReference: {fileID: 0}
     - target: {fileID: 737699496168361216, guid: 43533148434e5094f826ae617d1785da, type: 3}
       propertyPath: m_LocalPosition.z
