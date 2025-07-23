@@ -2326,6 +2326,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8073601251360991807, guid: a928b63ddca85d8478eb3425babdc06a, type: 3}
+      propertyPath: m_Size.x
+      value: 6.120161
+      objectReference: {fileID: 0}
+    - target: {fileID: 8073601251360991807, guid: a928b63ddca85d8478eb3425babdc06a, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.029996991
+      objectReference: {fileID: 0}
     - target: {fileID: 8629309311485594178, guid: a928b63ddca85d8478eb3425babdc06a, type: 3}
       propertyPath: m_Name
       value: player

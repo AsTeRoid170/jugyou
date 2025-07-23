@@ -27,5 +27,16 @@ public class SwordHitbox : MonoBehaviour
                 enemy.TakeDamage(damage*2);
             }
         }
+
+        if (collision.CompareTag("enemy"))
+        {
+            BossEnemyHealth enemy = collision.GetComponent<BossEnemyHealth>();
+            if (enemy != null && playerStatus != null)
+            {
+                Debug.Log("You way");
+                int damage = playerStatus.GetPower();  // UŒ‚—Í‚ğæ“¾
+                enemy.TakeDamage(damage * 2);
+            }
+        }
     }
 }

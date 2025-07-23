@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 1027047285561613065}
   - component: {fileID: 625180806043898741}
   - component: {fileID: 8078299117120379558}
-  - component: {fileID: 8194262347278959432}
   - component: {fileID: 4237537402077030085}
   - component: {fileID: 1887751566627751297}
   - component: {fileID: 200990906662065159}
+  - component: {fileID: 1517758520636711963}
   m_Layer: 0
   m_Name: BossEnemy
   m_TagString: enemy
@@ -147,19 +147,6 @@ MonoBehaviour:
   beamPoint: {fileID: 6479306380198234464}
   AttackSe: {fileID: 8300000, guid: 4d00c0421612635428279130f8158763, type: 3}
   BulletClip: {fileID: 8300000, guid: 71cbb30219786b4478065a169d793b0d, type: 3}
---- !u!114 &8194262347278959432
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2082771287136788729}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ad5bf36fd1c41343b959ab9c052eae2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MaxHp: 1
 --- !u!58 &4237537402077030085
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -339,6 +326,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1517758520636711963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2082771287136788729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82645cd83f25df748922a247569e0de0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHp: 40
 --- !u!1 &2090882101867044570
 GameObject:
   m_ObjectHideFlags: 0
