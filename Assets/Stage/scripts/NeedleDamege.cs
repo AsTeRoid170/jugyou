@@ -2,15 +2,20 @@ using UnityEngine;
 
 public class NeedleDamege : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [SerializeField] int AttackPower = 10;      // UŒ‚—Í
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        // Player‚É“–‚½‚Á‚½‚çƒ_ƒ[ƒW‚ğ—^‚¦‚é
+        if (collision.gameObject.tag == "Player")
+        {
+            //Debug.Log("‚Æ‚°‚ÉÚG");
+            PlayerHealth player = collision.gameObject.GetComponent<PlayerHealth>();
+            if (player != null)
+            {
+                //Debug.Log(collision.gameObject.name);
+                player.TakeDamage(AttackPower);
+            }
+        }
     }
 }
