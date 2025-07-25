@@ -14,4 +14,9 @@ public class chageScene : MonoBehaviour
     {
         SceneManager.LoadScene("MenuScene");
     }
+
+    public void end_button()
+    {
+        Application.Quit();
+    }
 }

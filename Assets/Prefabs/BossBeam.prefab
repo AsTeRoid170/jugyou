@@ -227,5 +227,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
-  AttackPower: 0
+  AttackPower: 20
   Interval: 10

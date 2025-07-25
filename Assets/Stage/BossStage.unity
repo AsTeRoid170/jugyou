@@ -2271,6 +2271,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5036535254636009432, guid: a928b63ddca85d8478eb3425babdc06a, type: 3}
+      propertyPath: MaxHp
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036535254636009432, guid: a928b63ddca85d8478eb3425babdc06a, type: 3}
       propertyPath: hpSlider
       value: 
       objectReference: {fileID: 2114418414}
@@ -2325,6 +2329,14 @@ PrefabInstance:
     - target: {fileID: 7141888035427335312, guid: a928b63ddca85d8478eb3425babdc06a, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901889487857670534, guid: a928b63ddca85d8478eb3425babdc06a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -5.0001
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901889487857670534, guid: a928b63ddca85d8478eb3425babdc06a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 8073601251360991807, guid: a928b63ddca85d8478eb3425babdc06a, type: 3}
       propertyPath: m_Size.x

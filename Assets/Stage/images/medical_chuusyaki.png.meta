@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      medical_chuusyaki_0: -1500217759532393105
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
